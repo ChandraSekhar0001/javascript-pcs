@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>lesson 8 Objects</title>
+    </head>
+    <body>
+        <p>
+            Rock paper Scissors
+        </p>
+        <button onclick="
+            funResult('Rock');
+        ">Rock</button>
+        <button onclick="
+            funResult('paper');
+        ">paper</button>
+        <button onclick="
+            funResult('scissor');
+        ">scissors</button>
+        <button onclick="
+            score.win=0;
+            score.lose=0;
+            score.ties=0;
+            localStorage.removeItem('score');
+            alert('Score is resetd you can start ')
+        ">Rest Score</button>
+        <script>
+            //objects make our code more organized
+            //group multiple values together
+            //use multiple values together
+
+            /*IN objects there are 2 more built in objects
+            JSON
+            localstorage
+
+            JSON : all properties and strings must use double ""
+            -json didn't support single ''
+            -json didn't supports functions
+
+            Localstorage: it is useb d to store values perementaly 
+
+
+            AutoBoxing
+            */
+            console.log('hello'.length);
+            console.log('hello'.toUpperCase());
+            //object1 is a reference of message  
+            const object1={
+                message:'hello'
+            };
+
+            const object2=object1;
+            //even we are assineing const to object1 we can change values in objects.
+            object1.message='Good';
+            console.log(object1);
+            console.log(object2);
+
+            //objects are reference so we can compare
+
+            const object3={
+                message:'Good'
+            };
+
+            console.log(object1===object3);
+            //object2 is same reference to object 1 come it shows true.
+            console.log(object1===object2);
+
+
+            //create destructuring
+            const object4={
+                message:'hello good morning',
+                time: 6
+            };
+            //when we are assinging to object message to a veribale
+            //const message= object4.message;
+            //for example variable name and object perameter name same we can right like this also.
+            const {message,time}=object4;
+            console.log(message);
+            console.log(time);
+            
+
+            //shorthand property and shorthand method
+            const object5={
+                //message: message
+                message,
+                /*method : function function1(){
+                    console.log('i am in function');
+                }*/
+                method() {
+                    console.log(' i am in method function');
+                }
+            }
+            console.log(message);
+            object5.method();
+
+
+
+
+            const product={
+                name:'bag',
+                prize: 5000
+
+            };
+            console.log(product);
+            //dot notation
+            console.log(product.name);
+            console.log(product.prize);
+
+            product.name='book';
+
+            console.log(product);
+
+            product.newlog=true;
+            console.log(product);
+
+            delete product.newlog;
+            console.log(product);
+
+            //createing new object
+            //we can create nested objects and functions
+            const product2={
+                name:'Hello',
+                'delivery-time': '1day',
+                rating:{
+                    stars: 4.5,
+                    count: 76
+                },
+                fun: function function01(){
+                    console.log('function calling');
+                }
+            };
+            console.log(product2);
+            console.log(product2.name);
+            //bracket notation
+            console.log(product2['name']);
+            console.log(product2['delivery-time']);
+            console.log(product2.rating);
+            console.log(product2.rating.count);
+            product2.fun();
+
+            //JSON
+            console.log(JSON.stringify(product2));
+            console.log(JSON.parse(JSON.stringify(product2)));
+
+            //create object for rock paper scissor
+            let score=JSON.parse(localStorage.getItem('score')) || {
+                win:0,
+                lose:0,
+                ties:0
+            };
+            /*
+            if (score===null){
+                score={
+                    win:0,
+                    lose:0,
+                    ties:0
+                }
+            }
+            */ 
+
+            //rock paper scissors
+            function function1(){
+                const randomN=Math.random();
+                let computerM='';
+                if (randomN>=0 && randomN <= 1/3){
+                    computerM='Rock';
+                }else if(randomN>= 1/3 && randomN<= 2/3){
+                    computerM='paper';
+                }else{
+                    computerM='scissors';
+                }
+                return computerM;
+            }
+            function funResult(playermove){
+                 const computerM=function1();
+                 let result='';
+                 if (playermove==='Rock'){
+                    if (computerM===playermove){
+                        result='Tie';
+                    }else if(computerM==='paper'){
+                        result='win';
+                    }else{
+                        result='lose';
+                    }
+
+                 }else if(playermove==='paper'){
+                    if(computerM===playermove){
+                        result='tie';
+                    }else if(computerM==='Rock'){
+                        result='win';
+                    }else{
+                        result='lose';
+                    }
+                    
+                 }else{
+                    if(computerM===playermove){
+                        result='tie';
+                    }else if(computerM==='paper'){
+                        result='win';
+                    }else{
+                        result='lose';
+                    }
+                 }
+                 if (result ==='win'){
+                    score.win+=1;
+                 }else if(result==='lose'){
+                    score.lose+=1;
+                 }else{
+                    score.ties+=1;
+                 }
+
+                 localStorage.setItem('score',JSON.stringify(score));
+
+                 alert(`you choose ${playermove} the computer move is ${computerM} so you ${result}!
+ Wins: ${score.win} Lose: ${score.lose} Ties: ${score.ties}`);
+            }
+        </script>
+    </body>
+</html>

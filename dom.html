@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM</title>
+    </head>
+    <body>
+        <button>hello</button>
+        <button class="js-button">second</button>
+        <script>
+            //this below method is used to target the body
+            //document.querySelector();
+            console.log(document.querySelector('button').innerHTML);
+
+            document.querySelector('button')
+                .innerHTML='change';
+
+            document.querySelector('.js-button')
+
+            /*
+            const variable1={
+                basketball:2095,
+                fun: function fun1(){
+
+                }
+            };
+            console.log(variable1.basketball);
+            variable1.basketball +=500;
+            console.log(variable1.basketball);
+            variable1.delivery_time= '3 days';
+            console.log(variable1.delivery_time);
+            */
+
+            /*
+            //Document object model
+            document.body.innerHTML='hello';
+            document.title='dom';
+
+
+
+            console.log(document.title);
+            console.log(document.body);
+
+            console.log(document.body.innerHTML);
+            document.body.innerHTML='<button>good</button>';
+            */
+        </script>
+
+    </body>
+</html>

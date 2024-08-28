@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>calculator</title>
+
+    </head>
+    <body>
+        <!--Three way to create variable
+            1.let :- it is used to if you know the value is change use to let for creating variable-
+            2.const :- it is used to constant value in the variable 
+            3.var :-it is the orginal way to create variable in javascript, var having some issues-->
+        <!--eval():-is used to convert string in mathmatical values-->
+        <p> calcuator </p>
+        <p><button onclick="
+            calcuator=calcuator+'1';console.log(calcuator);
+            ">1</button>
+            <button onclick="
+            calcuator=calcuator+'2';console.log(calcuator);
+            ">2</button>
+            <button onclick="
+            calcuator=calcuator+'3';console.log(calcuator);
+            ">3</button>
+            <button onclick="
+            calcuator=calcuator+'+';console.log(calcuator);
+            ">+</button>
+        </p>
+        <p>
+            <button onclick="
+            calcuator=calcuator+'4';console.log(calcuator);
+            ">4</button>
+            <button onclick="
+            calcuator=calcuator+'5';console.log(calcuator);
+            ">5</button>
+            <button onclick="
+            calcuator=calcuator+'6';console.log(calcuator);
+            ">6</button>
+            <button onclick="
+            calcuator=calcuator+'-';console.log(calcuator);
+            ">-</button>
+        </p>
+        <p>
+            <button onclick="
+            calcuator=calcuator+'7';console.log(calcuator);
+            ">7</button>
+            <button onclick="
+            calcuator=calcuator+'8';console.log(calcuator);
+            ">8</button>
+            <button onclick="
+            calcuator=calcuator+'9';console.log(calcuator);
+            ">9</button>
+            <button onclick="
+            calcuator=calcuator+'*';console.log(calcuator);
+            ">*</button>
+
+        </p>
+        <p>
+            <button onclick="
+            calcuator=calcuator+'0';console.log(calcuator);
+            ">0</button>
+            <button onclick="
+            calcuator=calcuator+'.';console.log(calcuator);
+            ">.</button>
+            <button onclick="
+            calcuator=calcuator+'/';console.log(calcuator);
+            ">/</button>
+            <button onclick="
+            calcuator=eval(calcuator);console.log(calcuator);
+            ">=</button>
+        </p>
+        <button onclick="
+        calcuator='';console.log('clear');
+        ">clear</button>
+        
+        <script>
+            let calcuator="";
+        </script>
+    </body>
+
+</html>

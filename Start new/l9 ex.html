@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>lesson 9 exercises</title>
+    </head>
+    <body>
+        <!--9a-->
+        <button class="a-but">9a</button>
+        <!--9b-->
+        <button class="b-but">9b</button>
+        <!--9c-->
+        <p>
+            <button class="heads_but" onclick="
+                resultFun('heads');
+                
+                ">heads</button>
+            <button class="tails_but" onclick="
+                resultFun('tails');
+            
+            ">tails</button>
+        </p>
+        <p class="result"></p>
+        <!--9d,9e,9f-->
+        <input class="input" placeholder="Name" onkeydown="
+            keydown(event);
+        ">
+        <button class="sub_but" onclick="
+            submitFun();
+        
+        ">Submit</button>
+        <p class="sub_result">
+        </p>
+
+        <!--9g-->  
+        <input class="cal-input" placeholder="cost o the order" onkeydown="
+            keydownCal(event);
+        ">
+        <button class="cal-but" onclick="
+            calFun();
+
+        ">Calculate</button>
+        <p class="cal_result"></p>
+
+
+        <!--9h-->
+        <input class="onkeyup_input" onkeyup="onkeyFun()">
+        <p class="onkey_result"></p>
+
+        <!--9i-->
+        <p>Cart Quantity</p>
+        <button onclick="
+            console.log(`Cart Quantity : ${cart_quantity}`);
+            cartResult(cart_quantity);
+        ">cart quantity</button>
+        <button onclick="
+            updateCartQuantity(1);
+            
+        ">Add to cart</button>
+        <button onclick="
+            updateCartQuantity(2);
+        ">+2</button>
+        <button onclick="
+            updateCartQuantity(3);
+        ">+3</button>
+        <button onclick="
+            updateCartQuantity(4);
+        ">+4</button>
+        <button onclick="
+            updateCartQuantity(5);
+        ">+5</button>
+        <button onclick="
+            updateCartQuantity(-1);
+        ">remove from cart</button>
+        <button onclick="
+            updateCartQuantity(-2);
+        ">-2</button>
+        <button onclick="
+            updateCartQuantity(-3);
+        ">-3</button>
+        <button onclick="
+            cart_quantity=0;
+            console.log('Cart Rested')
+            console.log(`Cart Quantity : ${cart_quantity}`);
+            cartResult(cart_quantity);
+        ">Rest Cart</button>
+        <p class="cart_quantity_result"></p>
+
+
+        <!--9j-->
+        <p> calcuator </p>
+        <p class="calculate_result"></p>
+        <p><button onclick="
+            updateCalculation('1');
+            ">1</button>
+            <button onclick="
+            updateCalculation('2');
+            ">2</button>
+            <button onclick="
+            updateCalculation('3');
+            ">3</button>
+            <button onclick="
+            updateCalculation('+');
+            ">+</button>
+        </p>
+        <p>
+            <button onclick="
+            updateCalculation('4');
+            ">4</button>
+            <button onclick="
+            updateCalculation('5');
+            ">5</button>
+            <button onclick="
+            updateCalculation('6');
+            ">6</button>
+            <button onclick="
+            updateCalculation('-');
+            ">-</button>
+        </p>
+        <p>
+            <button onclick="
+            updateCalculation('7');
+            ">7</button>
+            <button onclick="
+            updateCalculation('8');
+            ">8</button>
+            <button onclick="
+            updateCalculation('9');
+            ">9</button>
+            <button onclick="
+            updateCalculation('*');
+            ">*</button>
+
+        </p>
+        <p>
+            <button onclick="
+            updateCalculation('0');
+            ">0</button>
+            <button onclick="
+            updateCalculation('.');
+            ">.</button>
+            <button onclick="
+            updateCalculation('/');
+            ">/</button>
+            <button onclick="
+            calcuator=eval(calcuator);console.log(calcuator);
+
+            document.querySelector('.calculate_result').innerHTML=`${calcuator}`;
+            ">=</button>
+
+            </p>
+            <button onclick="
+                calcuator='';
+                localStorage.setItem('calcuator',calcuator);
+                console.log('clear');
+                document.querySelector('.calculate_result').innerHTML=`${calcuator}`;
+            ">clear</button>
+
+        <script>
+            //9a
+            console.log(document.querySelector('.a-but'));
+            //9b
+            console.log(document.querySelector('.b-but').innerHTML='9b done!');
+            //9c
+            function resultFun(pera){
+                document.querySelector('.result').innerHTML=`You Chose: ${pera}`;
+            }
+
+            //9d
+            function submitFun(){
+                const var1=document.querySelector('.input');
+
+                const sub=var1.value;
+                document.querySelector('.sub_result').innerHTML=`Your name is: ${sub}`;
+            }
+            //9e
+            function keydown(event){
+                if (event.key === 'Enter'){
+                    submitFun();
+                }
+            }
+
+            //9g
+            function calFun(){
+                const cal1=document.querySelector('.cal-input');
+                let cost=Number(cal1.value);
+
+                if (cost < 40){
+                    cost=((cost*100)+1000)/100;
+                    
+                    
+                }
+                document.querySelector('.cal_result').innerHTML=`$${cost}`;
+            }
+            
+            function keydownCal(event){
+                if (event.key === 'Enter'){
+                    calFun();
+                }
+            }
+
+            //9h
+
+            function onkeyFun(){
+                let onke=document.querySelector('.onkeyup_input').value;
+                document.querySelector('.onkey_result').innerHTML=`${onke}`;   
+            }
+
+            //9i
+            let cart_quantity=0;
+            function updateCartQuantity(cartValue){
+                if (cartValue>0){
+                    if (cart_quantity<10){
+                        cart_quantity+=cartValue;
+                        if(cart_quantity>10){
+                            cart_quantity-=cartValue;
+                            alert(`you cant add more then 10 items , you can only add ${10-cart_quantity} items`)
+                        }
+                        console.log(`Cart Quantity : ${cart_quantity}`);
+                    }else{
+                        alert('The cart is full and dont update cart');
+                    }
+                }else{
+                    if (cartValue<0){
+                        if (cart_quantity>0){
+                            cart_quantity+=cartValue;
+                            console.log(cart_quantity);
+                            if (cart_quantity<0){
+                                cart_quantity-=cartValue;
+                                console.log(cart_quantity);
+                                alert(`you cant remove less than 0 items, you can remove ${0+cart_quantity} items`);
+                            }
+                            console.log(`Cart Quantity : ${cart_quantity}`);
+                        }else{
+                            alert('the cart is empty and dont remove items in cart');
+                        }
+                    }
+                }
+                cartResult(cart_quantity);
+                
+            }
+
+            function cartResult(value){
+                document.querySelector('.cart_quantity_result').innerHTML=`Cart Quantity: ${value}`;
+            }
+
+            //9j
+            let calcuator=localStorage.getItem('calcuator') || '' ;
+            function updateCalculation(value){
+                calcuator=calcuator+value;
+                console.log(calcuator);
+                localStorage.setItem('calcuator',calcuator);
+
+                document.querySelector('.calculate_result').innerHTML=`${calcuator}`;
+            }
+        </script>
+    </body>
+</html>

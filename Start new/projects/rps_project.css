@@ -1,0 +1,44 @@
+body{
+    background-color: black;
+    color: white;
+    font-family: arial;
+}
+.title{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.rock , .paper, .scissor{
+    background-color: black;
+    border: 2px solid orange;
+    border-radius: 100px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    padding-left: 27px;
+    padding-right: 27px;
+    margin-right: 20px;
+    
+}
+.move{
+    height: 50px;
+}
+.js-wl{
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.mov{
+    height: 40px;
+}
+.js-moves{
+    margin-bottom: 20p;
+}
+.js-score{
+    font-size: 20px;
+}
+.reset-but{
+    font-size: 15px;
+    border-radius: none;
+    border: none;
+    padding: 10px 20px ;
+}

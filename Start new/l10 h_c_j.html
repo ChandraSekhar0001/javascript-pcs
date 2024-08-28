@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Css</title>
+        <style>
+            body{
+                font-family: Arial;
+            }
+            .sub_but{
+                background-color: black;
+                font-weight: bold;
+                color: white;
+                border-radius: 50px;
+                border: none;
+                padding: 10px 15px ;
+                cursor: pointer;
+                transition: 0.15ms;
+                margin-bottom: 30px;
+                
+            }
+            .is_subscribed{
+                background-color: rgb(238, 236, 236);
+                color: black;
+                transition: 0.15ms;
+            }
+
+            .cal-input{
+                border: solid 1px black;
+                padding: 5px 10px;
+                border-radius: none;
+            
+            }
+            .cal-but{
+                background-color: green;
+                color: white;
+                border: none;
+                padding: 6px 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>YouTube Subscribe Button</p>
+        <button class="sub_but" onclick="
+            subFun();
+
+        ">Subscribe</button>
+        <p>
+
+        </p>
+        <p>
+            Amazon Shipping Calculator
+        </p>
+        <p>
+            Orders under $40 = +$10 shipping.
+        </p>
+        <p>
+            Orders over $40 = FREE shipping.
+        </p>
+        <input class="cal-input" placeholder="cost o the order" onkeydown="
+            keydownCal(event);
+        ">
+        <button class="cal-but" onclick="
+            calFun();
+
+        ">Calculate</button>
+        <p class="cal_result"></p>
+
+        <script>
+            let subbut=document.querySelector('.sub_but');
+            function subFun(){
+                if(subbut.innerHTML === 'Subscribe'){
+                    subbut.innerHTML='Subscribed';
+                    subbut.classList.add('is_subscribed');
+                }else{
+                    subbut.innerHTML='Subscribe';
+                    subbut.classList.remove('is_subscribed');
+                }
+            }
+
+            function calFun(){
+                const cal1=document.querySelector('.cal-input');
+                let cost=Number(cal1.value);
+
+                if (cost < 40){
+                    cost=((cost*100)+1000)/100;
+                    
+                    
+                }
+                document.querySelector('.cal_result').innerHTML=`$${cost}`;
+            }
+            
+            function keydownCal(event){
+                if (event.key === 'Enter'){
+                    calFun();
+                }
+            }
+        </script>
+    </body>
+
+</html>

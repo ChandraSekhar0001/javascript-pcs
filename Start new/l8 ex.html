@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>lesson 8 Exercises</title>
+    </head>
+    <body>
+        <p> calcuator </p>
+        <p><button onclick="
+            updateCalculation('1');
+            ">1</button>
+            <button onclick="
+            updateCalculation('2');
+            ">2</button>
+            <button onclick="
+            updateCalculation('3');
+            ">3</button>
+            <button onclick="
+            updateCalculation('+');
+            ">+</button>
+        </p>
+        <p>
+            <button onclick="
+            updateCalculation('4');
+            ">4</button>
+            <button onclick="
+            updateCalculation('5');
+            ">5</button>
+            <button onclick="
+            updateCalculation('6');
+            ">6</button>
+            <button onclick="
+            updateCalculation('-');
+            ">-</button>
+        </p>
+        <p>
+            <button onclick="
+            updateCalculation('7');
+            ">7</button>
+            <button onclick="
+            updateCalculation('8');
+            ">8</button>
+            <button onclick="
+            updateCalculation('9');
+            ">9</button>
+            <button onclick="
+            updateCalculation('*');
+            ">*</button>
+
+        </p>
+        <p>
+            <button onclick="
+            updateCalculation('0');
+            ">0</button>
+            <button onclick="
+            updateCalculation('.');
+            ">.</button>
+            <button onclick="
+            updateCalculation('/');
+            ">/</button>
+            <button onclick="
+            calcuator=eval(calcuator);console.log(calcuator);
+            ">=</button>
+
+        </p>
+        <button onclick="
+        calcuator='';
+        localStorage.setItem('calcuator',calcuator);
+        console.log('clear');
+        ">clear</button>
+
+        <p>
+            <button onclick="
+                playGame('heads');
+            ">heads</button>
+            <button onclick="
+                playGame('tails');
+            ">tails</button>
+            <button onclick="
+                score.win=0;
+                score.lose=0;
+                localStorage.removeItem('score');
+                console.log('score is rested');
+            ">Reset</button>
+        </p>
+
+
+
+        <script>
+            //8a
+            const object1={
+                name:'basketball',
+                price:2095
+            }
+            console.log(object1);
+            //8b
+            object1.price+=500;
+            console.log(object1);
+            //8c
+            object1['delivery-time']='3 days';
+            console.log(object1);
+            //8d
+            function comaparePrice(product1,product2){
+                if (product1.price <product2.price){
+                    return product1;
+
+                }else{
+                    return product2;
+                }
+            }
+            const product1={
+                name:'boll',
+                price:50
+            };
+            const product2={
+                name:'bat',
+                price:100
+            };
+            console.log(comaparePrice(product1,product2));
+
+            //8e
+            const pro1={
+                name:'ball',
+                price:50
+            };
+            const pro2={
+                name:'ball',
+                price:50
+            };
+            function isSameProduct(product1,product2){
+                if (product1===product2){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+            console.log(isSameProduct(pro1,pro2));
+
+            //8f
+            console.log('Good Morning'.toLocaleLowerCase());
+
+            //8g
+            console.log('test'.repeat(2));
+
+            //8h
+            let calcuator=localStorage.getItem('calcuator') || '' ;
+            function updateCalculation(value){
+                calcuator=calcuator+value;
+                console.log(calcuator);
+                localStorage.setItem('calcuator',calcuator);
+            }
+
+            //8i
+            const score=JSON.parse(localStorage.getItem('score')) || {
+                win:0,
+                lose:0
+            }
+            let computerM='';
+            function playGame(guess){
+                const move=Math.random()
+                if (move >0 && move< 1/2){
+                    computerM='heads';
+                }else{
+                    computerM='tails';
+                }
+                if (guess===computerM){
+                    score.win+=1;
+                    console.log('you won!');
+                }else{
+                    score.lose+=1;
+                    console.log('you lose');
+                }
+                localStorage.setItem('score',JSON.stringify(score));
+                console.log(`you win: ${score.win}, and you lose: ${score.lose}`);
+            }
+        </script>
+    </body>
+</html>

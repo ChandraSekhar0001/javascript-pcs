@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>rock paper scissor using functions</title>
+    </head>
+    <body>
+        <p>Rock paper scissor</p>
+        <button onclick="
+            result('rock');
+        ">rock</button>
+        <button onclick="
+            result('paper');
+        ">paper</button>
+        <button onclick="
+            result('scissor');
+        ">scissor</button>
+        <script>
+            function result(playerMove){
+                let computerMove= pickComputerMove();
+                let result='';
+                if (playerMove==="scissor"){
+                    if(computerMove==='rock') {
+                        result='loss';
+                    } else if(computerMove==='paper'){
+                        result='win';
+                    }else{
+                        result='tie';
+                    }
+                }else if(playerMove==="paper"){
+                    if(computerMove==='rock') {
+                        result='won';
+                    } else if(computerMove==='paper'){
+                        result='tie';
+                    }else{
+                        result='loss';
+                    }
+                }else{
+                    if(computerMove==='rock') {
+                        result='tie';
+                    } else if(computerMove==='paper'){
+                        result='loss';
+                    }else{
+                        result='won';
+                    }
+                }
+                
+                alert(`you choose ${playerMove}. computer move is ${computerMove}. you are ${result}.`);   
+            }
+            function pickComputerMove(){
+                const randomNumber=Math.random();
+                let computerMove='';
+                if (randomNumber >= 0 && randomNumber <= 1/3) {
+                    computerMove='rock';
+                } else if(randomNumber >= 1/3 && randomNumber <= 2/3) {
+                    computerMove='paper';
+                }else {
+                    computerMove='scissor';
+                }
+                return computerMove;
+            }
+           
+        </script>
+
+    </body>
+</html>

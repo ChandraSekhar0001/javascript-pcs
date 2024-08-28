@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>booleans</title>
+    </head>
+    <body>
+        <p>calculator</p>
+        <button onclick="
+        console.log(count);
+        ">cart count</button>
+        <button onclick="
+            count>=10 ? alert('cart is full'):count+=1;
+            console.log(count);
+        ">increase count</button>
+        <button onclick="
+        count>=10 ? alert('cart is full'):count+2>10 ? alert('max cart size is 10 '):count+=2;
+        console.log(count);
+        ">+2</button>
+        <button onclick="
+        count>=10 ? alert('cart is full'):count+3>10 ? alert('max cart size is 10 '):count+=3;
+        console.log(count);
+        ">+3</button>
+        <button onclick="
+        count<=0 ? alert('not enough items in the cart'):count-2<0 ? alert('min cart size is 0 '):count-=2;
+        console.log(count);
+        ">-2</button>
+        <button onclick="
+        count<=0 ? alert('not enough items in the cart'):count-3<0 ? alert('min cart size is 0 '):count-=3;
+        console.log(count)
+        ">-3</button>
+        <button onclick="
+        count=0;
+        console.log(`reset count : ${count}`);
+        ">Reset</button>
+        <button onclick="
+        count<=0 ? alert('not enough items in the cart'):count-=1;
+        console.log(count);
+        ">remove count</button>
+
+        <script>
+            //(==,!= operator is converts in numbers )
+            //(===,!== operator is used to compare two numbers)
+            //compartive operators are 
+            //no need if only 1 line after in if condection
+            //&&,|| and ,or
+
+
+
+            /*
+            if (30 >= 18) {
+                console.log(" your are eligable to drive");
+            }else if (30<=60) {
+                console.log(" you are to old");
+            
+            }else{
+                console.log("you are not eligable to drive")
+            }
+
+            const variable1=1 ? 'true': "false";
+            console.log(variable1);
+
+            true && console.log("hello");
+
+            const variable2= 0 && "hello";
+            console.log(variable2);
+
+            const currency= 0 || "usd";
+            console.log(currency);
+            */
+            
+            /*let count=0;
+            let age=5;
+            const isHoliday=false;
+            if (isHoliday=== false && (age<=6 || age>=65)){
+                console.log('discount');
+
+            }else {
+                console.log('no discount');
+            }*/
+            let random=0;
+            let result="";
+            const guess="Heads";
+            random=Math.random();
+            if (random <=0.5){
+                result='Heads';
+            }else {
+                result='tails';
+            }  
+            guess===result ? console.log("you win!") : console.log('you lose!');
+            
+        
+
+
+            
+        </script>
+
+    </body>
+</html>

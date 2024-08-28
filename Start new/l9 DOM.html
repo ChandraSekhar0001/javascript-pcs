@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>lesson 9 Document object model</title>
+    </head>
+    <body>
+        <button>Hello</button>
+        <button class="js-but">
+            second button
+        </button>
+        <script>
+            /*
+            document.body.innerHTML='Hello';
+            document.title='Good job';
+            
+            console.log(document.title);
+            document.title='Good Job';
+
+            console.log(document.body);
+            console.log(document.body.innerHTML);
+            */
+           //document.queryselector is used to bring any html element to javascript.
+            console.log(document.querySelector('button'));
+            console.log(document.querySelector('button').innerHTML);
+            document.querySelector('button').innerHTML='Changed';
+
+            console.log(document.querySelector('.js-but'));
+
+            const buttonElm=document.querySelector('.js-but');
+            console.log(buttonElm);
+
+
+        </script>
+    </body>
+</html>

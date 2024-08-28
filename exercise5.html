@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>objects</title>
+    </head>
+    <body>
+        <script>
+            //objects 
+            /*JSON is built in object
+            JSON-javascript object notation
+            it is having similar syntax and it is similar to javascript object
+            but it has less features
+
+            JSON is used send data between computers
+            it is also used to store the data
+
+
+            JSON.stringify(object-name) is used to convert object into JSON
+            JSON.parse(Json-string) is used to convert JSON into object
+            */
+            /*
+            Localstorage is used to save the permanently (variables are temporary ,if we refesh the page or close the page all the variable are deleted)
+            
+            localStorage.setItem()
+            localstorage only supports string.
+
+            localStorage.getItem()
+            */
+            const product={
+                message:"chandu",age:20,
+                rating :{
+                    stars:4.5,
+                    count:80
+                },
+                fun: function toFirst(){
+                    console.log("function inside object ");
+                }
+            };
+            console.log(product);
+            console.log(product.name);
+            console.log(product.age);
+            //updating object
+            product.edu='btech';
+            console.log(product);
+            //deleting object
+            delete product.name;
+            console.log(product);
+            //calling function inside object
+            product.fun();
+            // calling nested object
+            console.log(product.rating.count );     
+            //lenght of the string
+            console.log("hello".length);
+            //converting lowercase to uppercase
+            console.log("hello".toUpperCase());      
+            //references means storing the value in the computer momery and variable stores the location of the value
+
+
+            //converstion of object into JSON
+            console.log(JSON.stringify(product));
+
+
+            //convertinon of JSON to object
+            console.log(JSON.parse(JSON.stringify(product)));
+            const object1={
+                name:"chandu"
+            };
+
+            const object2=object1;
+
+            object1.name="sekhar";
+            console.log(object1);
+            console.log(object2);
+
+            const object3={
+                name:"sekhar"
+            };
+            // the objects are stored in different location in computer memory thats why it showing false
+            console.log(object1===object3);
+            //when we are comparing two variabls that contain objects ,we are comparing the references not the value inside.
+            //if we whant to compare values in the object we need to check manuialy. 
+            console.log(object1===object2);
+            
+            const object4={
+                name:"sekhar",
+                age:23
+            };
+            //const name=object4.name;
+            //the below line code is shortcut of the above code and it called as destructuring.
+            const {name,age}=object4;
+            console.log(name);
+            console.log(age);
+
+            const object5={
+                //name: name
+                name,
+                /*method :function function1(){
+                    console.log("method");
+
+                }*/
+                // shortcut of above code in the below 
+                // this shortcut method called as shorthand method
+                method(){
+                    console.log("method");
+                }
+            }
+            console.log(object5);
+            object5.method();
+
+        </script>
+    </body>
+</html>

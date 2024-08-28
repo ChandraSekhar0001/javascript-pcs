@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>lesson 7 Exercises</title>
+    </head>
+    <body>
+        <p> calcuator </p>
+        <p><button onclick="
+            updateCalculation('1');
+            ">1</button>
+            <button onclick="
+            updateCalculation('2');
+            ">2</button>
+            <button onclick="
+            updateCalculation('3');
+            ">3</button>
+            <button onclick="
+            updateCalculation('+');
+            ">+</button>
+        </p>
+        <p>
+            <button onclick="
+            updateCalculation('4');
+            ">4</button>
+            <button onclick="
+            updateCalculation('5');
+            ">5</button>
+            <button onclick="
+            updateCalculation('6');
+            ">6</button>
+            <button onclick="
+            updateCalculation('-');
+            ">-</button>
+        </p>
+        <p>
+            <button onclick="
+            updateCalculation('7');
+            ">7</button>
+            <button onclick="
+            updateCalculation('8');
+            ">8</button>
+            <button onclick="
+            updateCalculation('9');
+            ">9</button>
+            <button onclick="
+            updateCalculation('*');
+            ">*</button>
+
+        </p>
+        <p>
+            <button onclick="
+            updateCalculation('0');
+            ">0</button>
+            <button onclick="
+            updateCalculation('.');
+            ">.</button>
+            <button onclick="
+            updateCalculation('/');
+            ">/</button>
+            <button onclick="
+            calcuator=eval(calcuator);console.log(calcuator);
+            ">=</button>
+
+        </p>
+        <button onclick="
+        calcuator='';console.log('clear');
+        ">clear</button>
+
+        <!--challenge 7h-->
+        <p>Cart Quantity</p>
+        <button onclick="
+            console.log(`Cart Quantity : ${cart_quantity}`);
+        ">cart quantity</button>
+        <button onclick="
+            updateCartQuantity(1);
+            
+        ">Add to cart</button>
+        <button onclick="
+            updateCartQuantity(2);
+        ">+2</button>
+        <button onclick="
+            updateCartQuantity(3);
+        ">+3</button>
+        <button onclick="
+            updateCartQuantity(4);
+        ">+4</button>
+        <button onclick="
+            updateCartQuantity(5);
+        ">+5</button>
+        <button onclick="
+            updateCartQuantity(-1);
+        ">remove from cart</button>
+        <button onclick="
+            updateCartQuantity(-2);
+        ">-2</button>
+        <button onclick="
+            updateCartQuantity(-3);
+        ">-3</button>
+        <button onclick="
+            cart_quantity=0;
+            console.log('Cart Rested')
+            console.log(`Cart Quantity : ${cart_quantity}`);
+        ">Rest Cart</button>
+
+        <!------------------------------------------>
+        <script>
+            function greet(name){
+                if (name ===undefined){
+                    console.log(`Hi there!`);
+                }else{
+                    console.log(`Hello ${name}!`);
+                }
+            }
+
+            greet('chandu');
+
+            function convertToFahrenheit(celsius){
+                const fahrenheit=(celsius*(9/5))+32
+                console.log(fahrenheit);
+                return fahrenheit;
+            }
+            convertToFahrenheit(25);
+
+            function convertToCelsius(fahrenheit){
+                const celsius=(fahrenheit-32)*5/9;
+                console.log(celsius);
+                return celsius;
+            }
+            convertToCelsius(86);
+
+            function convertTemperature(degrees,unit){
+                if (unit==='C'){
+                    let result=convertToFahrenheit(degrees);
+                    console.log(`${result}F`);
+                }else{
+                    let result=convertToCelsius(degrees);
+                    console.log(`${result}C`);
+                }
+            }
+            convertTemperature(25,'C');
+            convertTemperature(86,'F');
+
+            //7g
+            let calcuator='';
+            function updateCalculation(value){
+                calcuator=calcuator+value;
+                console.log(calcuator);
+            }
+            
+
+            //7h
+            let cart_quantity=0;
+            function updateCartQuantity(cartValue){
+                if (cartValue>0){
+                    if (cart_quantity<10){
+                        cart_quantity+=cartValue;
+                        if(cart_quantity>10){
+                            cart_quantity-=cartValue;
+                            alert(`you cant add more then 10 items , you can only add ${10-cart_quantity} items`)
+                        }
+                        console.log(`Cart Quantity : ${cart_quantity}`);
+                    }else{
+                        alert('The cart is full and dont update cart');
+                    }
+                }else{
+                    if (cartValue<0){
+                        if (cart_quantity>0){
+                            cart_quantity+=cartValue;
+                            console.log(cart_quantity);
+                            if (cart_quantity<0){
+                                cart_quantity-=cartValue;
+                                console.log(cart_quantity);
+                                alert(`you cant remove less than 0 items, you can remove ${0+cart_quantity} items`);
+                            }
+                            console.log(`Cart Quantity : ${cart_quantity}`);
+                        }else{
+                            alert('the cart is empty and dont remove items in cart');
+                        }
+                    }
+                }
+                
+            }
+        </script>
+
+    </body>
+</html>

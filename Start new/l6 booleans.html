@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>lesson 6 booleans</title>
+    </head>
+    <body>
+        <p>
+            Rock paper Scissors
+        </p>
+        <button onclick="
+            const randomN=Math.random();
+            let computerM='';
+            if (randomN>=0 && randomN <= 1/3){
+                computerM='Rock';
+            }else if(randomN>= 1/3 && randomN<= 2/3){
+                computerM='paper';
+            }else{
+                computerM='scissors';
+            }
+            let result='';
+            if (computerM ==='Rock'){
+                result='tie';
+            }else if(computerM === 'paper'){
+                result='lose';
+            }else{
+                result='win';
+            }
+            alert(`you choose Rock the computer move is ${computerM}, so you ${result}.`);
+        
+        ">Rock</button>
+        <button onclick="
+            const randomN=Math.random();
+            let computerM='';
+            if (randomN>=0 && randomN <= 1/3){
+                computerM='Rock';
+            }else if(randomN>= 1/3 && randomN<= 2/3){
+                computerM='paper';
+            }else{
+                computerM='scissors';
+            }
+            let result='';
+            if (computerM ==='Rock'){
+                result='win';
+            }else if(computerM === 'paper'){
+                result='tie';
+            }else{
+                result='lose';
+            }
+            alert(`you choose paper the computer move is ${computerM}, so you ${result}.`);
+        
+        ">paper</button>
+        <button onclick="
+            const randomN=Math.random();
+            let computerM='';
+            if (randomN>=0 && randomN <= 1/3){
+                computerM='Rock';
+            }else if(randomN>= 1/3 && randomN<= 2/3){
+                computerM='paper';
+            }else{
+                computerM='scissors';
+            }
+            let result='';
+            if (computerM ==='Rock'){
+                result='lose';
+            }else if(computerM === 'paper'){
+                result='win';
+            }else{
+                result='tie';
+            }
+            alert(`you choose scissor the computer move is ${computerM}, so you ${result}.`);
+        ">scissors</button>
+
+
+
+        <script>
+            console.log(3<5);
+            console.log(5=='5');
+            console.log(5==='5');
+            if(true){
+                console.log('hello');
+            }else{
+                console.log('hi');
+            }
+            const age=15;
+            // we can use elseif also in if
+            if (age >=18){
+                console.log('the person can drive');
+            }else{
+                console.log('the person cant drive');
+            }
+            console.log(true && true);
+
+            //Ternary operator it is shortcut of if statement.
+            const r=true ? 'truthy' : 'falsy';
+            console.log(r);
+            // guard operator
+            const message= 0 && 'hello';
+            console.log(message);
+            // default operator
+            const cur= undefined || 'USD';
+            console.log(cur);
+        </script>
+    </body>
+</html>

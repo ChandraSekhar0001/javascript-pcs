@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>lesson 6 Exercises</title>
+    </head>
+    <body>
+        <p>Cart Quantity</p>
+        <button onclick="
+            console.log(`Cart Quantity : ${cart_quantity}`);
+        ">cart quantity</button>
+        <button onclick="
+            if (cart_quantity<10){
+                cart_quantity++;
+                console.log(`Cart Quantity : ${cart_quantity}`);
+            }else{
+                alert('The cart is full and dont update cart');
+            }
+            
+        ">Add to cart</button>
+        <button onclick="
+            if (cart_quantity<10){
+                cart_quantity+=2;
+                if(cart_quantity>10){
+                    cart_quantity-=2
+                    alert(`you cant add more then 10 items , you can only add ${10-cart_quantity} items`)
+                }
+                console.log(`Cart Quantity : ${cart_quantity}`);
+            }else{
+                alert('The cart is full and dont update cart');
+            }
+        ">+2</button>
+        <button onclick="
+            if (cart_quantity<10){
+                cart_quantity+=3;
+                if(cart_quantity>10){
+                    cart_quantity-=3
+                    alert(`you cant add more then 10 items , you can only add ${10-cart_quantity} items`)
+                }
+                console.log(`Cart Quantity : ${cart_quantity}`);
+            }else{
+                alert('The cart is full and dont update cart');
+            }
+        ">+3</button>
+        <button onclick="
+            if (cart_quantity<10){
+                cart_quantity+=4;
+                if(cart_quantity>10){
+                    cart_quantity-=4
+                    alert(`you cant add more then 10 items , you can only add ${10-cart_quantity} items`)
+                }
+                console.log(`Cart Quantity : ${cart_quantity}`);
+            }else{
+                alert('The cart is full and dont update cart');
+            }
+        ">+4</button>
+        <button onclick="
+            if (cart_quantity<10){
+                cart_quantity+=5;
+                if(cart_quantity>10){
+                    cart_quantity-=5
+                    alert(`you cant add more then 10 items , you can only add ${10-cart_quantity} items`)
+                }
+                console.log(`Cart Quantity : ${cart_quantity}`);
+            }else{
+                alert('The cart is full and dont update cart');
+            }
+        ">+5</button>
+        <button onclick="
+            if(cart_quantity>0){
+                cart_quantity--;
+                console.log(`Cart Quantity : ${cart_quantity}`);
+            }else{
+                alert('the cart is empty and dont remove cart');
+            }
+            
+            
+        ">remove from cart</button>
+        <button onclick="
+            if (cart_quantity>0){
+                cart_quantity-=2;
+                if (cart_quantity<0){
+                    cart_quantity+=2;
+                    alert(`you cant remove less than 0 items, you can remove ${0+cart_quantity} items`);
+                }
+                console.log(`Cart Quantity : ${cart_quantity}`);
+
+            }else{
+                alert('the cart is empty and dont remove items in cart');
+            }
+        ">-2</button>
+        <button onclick="
+            if (cart_quantity>0){
+                cart_quantity-=3;
+                if (cart_quantity<0){
+                    cart_quantity+=3;
+                    alert(`you cant remove less than 0 items, you can remove ${0+cart_quantity} items`);
+                }
+                console.log(`Cart Quantity : ${cart_quantity}`);
+
+            }else{
+                alert('the cart is empty and dont remove items in cart');
+            }
+        ">-3</button>
+        <button onclick="
+            cart_quantity=0;
+            console.log('Cart Rested')
+            console.log(`Cart Quantity : ${cart_quantity}`);
+        ">Rest Cart</button>
+        <script>
+            const hour=15;
+            const name='Chandu';
+            if (hour>=6 && hour<=12){
+                console.log(`Good Morning ${name}!`);
+            }else if(hour>=13 && hour<=17){
+                console.log(`Good Afternoon ${name}!`);
+            }else{
+                console.log(`Good Night ${name}!`);
+            }
+            //6d
+            const age=6;
+            const isHoliday=false;
+            if (!isHoliday && (age<=6 || age>=65)){
+                console.log('Discount');
+            }else{
+                console.log('No Discount');
+            }
+            //6f
+            let gen=Math.random();
+            let result='';
+            const guess='Heads';
+            if (gen<1/2){
+                result='Heads';
+                console.log('Heads');
+            }else{
+                result='Tails';
+                console.log('Tails');
+            }
+
+            if (guess===result){
+                console.log('you Win!');
+            }else{
+                console.log('you lose!');
+            }
+            let op=guess===result;
+            let re= op ? 'You win!' : 'You lose!';
+            console.log(re);
+
+            //6f
+            let cart_quantity=0;
+        </script>
+    </body>
+</html>

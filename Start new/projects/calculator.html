@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="calculator.css">
+    </head>
+    <body>
+        <p class="title"> calcuator </p>
+        <p class="calculate_result"></p>
+        <p><button class="cal-buttons" onclick="
+            updateCalculation('1');
+            ">1</button>
+            <button class="cal-buttons" onclick="
+            updateCalculation('2');
+            ">2</button>
+            <button class="cal-buttons" onclick="
+            updateCalculation('3');
+            ">3</button>
+            <button class="cal-buttons-op" onclick="
+            updateCalculation('+');
+            ">+</button>
+        </p>
+        <p>
+            <button class="cal-buttons" onclick="
+            updateCalculation('4');
+            ">4</button>
+            <button class="cal-buttons" onclick="
+            updateCalculation('5');
+            ">5</button>
+            <button class="cal-buttons" onclick="
+            updateCalculation('6');
+            ">6</button>
+            <button class="cal-buttons-op" onclick="
+            updateCalculation('-');
+            ">-</button>
+        </p>
+        <p>
+            <button class="cal-buttons" onclick="
+            updateCalculation('7');
+            ">7</button>
+            <button class="cal-buttons" onclick="
+            updateCalculation('8');
+            ">8</button>
+            <button class="cal-buttons" onclick="
+            updateCalculation('9');
+            ">9</button>
+            <button class="cal-buttons-op" onclick="
+            updateCalculation('*');
+            ">*</button>
+
+        </p>
+        <p>
+            <button class="cal-buttons" onclick="
+            updateCalculation('0');
+            ">0</button>
+            <button class="cal-buttons-do" onclick="
+            updateCalculation('.');
+            ">.</button>
+            <button class="cal-buttons-la" onclick="
+            updateCalculation('/');
+            ">/</button>
+            <button class="cal-buttons-op" onclick="
+            calcuator=eval(calcuator);console.log(calcuator);
+
+            document.querySelector('.calculate_result').innerHTML=`${calcuator}`;
+            ">=</button>
+
+            </p>
+            <button class="cal-buttons-clear" onclick="
+                calcuator='';
+                localStorage.setItem('calcuator',calcuator);
+                console.log('clear');
+                document.querySelector('.calculate_result').innerHTML=`${calcuator}`;
+            ">clear</button>
+            </p>
+        </p>
+        <script src="calculator.js"></script>
+    </body>
+</html>

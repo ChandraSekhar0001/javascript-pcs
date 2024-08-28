@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>exercise6</title>
+
+    </head>
+    <body>
+        <p>YouTube Subscribe Button</p>
+        <button onclick=" 
+        subscribe()
+        " class="js-subscribe-but">
+        subscribe
+        </button>
+        <br>
+        <br>
+        <p>afda</p>
+        <p>afwafasddssdfasc</p>
+        <p>adafddddcdzf</p>
+        <p class="result"></p>
+
+        <input class="input-value" placeholder="enter the price">
+        <button onclick="submitElement()" class="submit-button">submit</button>
+        <script>
+            function submitElement(){
+                console.log(input);
+            }
+
+
+
+            function subscribe(){
+            const buttonElement=document.querySelector('.js-subscribe-but');
+                if(buttonElement.innerText==='subscribe'){
+                    buttonElement.innerHTML='subscribed';
+                }else{
+                    buttonElement.innerHTML='subscribe';
+                }   
+            }
+
+        </script>
+    </body>
+</html>
